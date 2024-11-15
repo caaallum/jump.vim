@@ -8,11 +8,14 @@ if exists("g:loaded_jump")
 endif
 let g:loaded_jump = 1
 
-command! -nargs=0 DisplayTime call jump#DisplayTime()
-command! -nargs=0 JumpCurrentLine call jump#JumpCurrentLine()
+command! -nargs=0 JumpCurrentLine call jump#CurrentLine()
 
 if !exists("g:jump_no_mappings") || ! g:jump_no_mappings
   nmap <leader>j <cmd>JumpCurrentLine<cr>
+endif
+
+if !exists("g:jump_keys") || !g:jump_keys
+  let g:jump_keys = "etovxqpdygfblzhckisuran"
 endif
 
 " vim:set ft=vim sw=2 sts=2 et:
